@@ -68,6 +68,10 @@ total_reports = nrow(data)
 total_reports
 
 # write code below!
+blank_values <- data %>% filter(is.na(at_scene_time_ts) == TRUE)
+blank_values_count <- nrow(blank_values)
+
+proportion <- blank_values_count / total_reports
 ```
 
 
@@ -97,6 +101,8 @@ _hint_ this code should look similar to the previous block (Frequency of Crimes 
 _challenge_: Crime by time of day may vary by weekend days and weekdays. Plot the crime by times of day for weekdays and weekend days separately.
 ```{r}
 # Your code below!
+
+qplot(x= data$at_scene_time_hr)
 ```
 
 #6. Types of contacts
